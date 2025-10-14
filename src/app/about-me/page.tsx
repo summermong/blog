@@ -20,6 +20,7 @@ export default function page() {
           width={200}
           height={200}
           className='rounded-full mx-auto mb-8'
+          priority
         />
         <div>
           안녕하세요! <br />

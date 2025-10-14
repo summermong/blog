@@ -21,6 +21,7 @@ export function Header() {
               className='rounded-4xl'
               width={40}
               height={40}
+              priority
             />
           </Link>
 

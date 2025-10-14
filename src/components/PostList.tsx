@@ -52,7 +52,7 @@ export function PostList({ posts }: PostListProps) {
       {/* 모바일: 세로 나열 */}
       <div className='flex flex-col gap-6 md:hidden w-68 mx-auto'>
         {filteredPosts.map(
-          ({ slug, title, date, excerpt, thumbnail, tags }) => (
+          ({ slug, title, date, excerpt, thumbnail, tags }, index) => (
             <Link key={slug} href={`/posts/${slug}`}>
               <article className='bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden dark:bg-gray-800'>
                 {thumbnail && (
@@ -63,6 +63,7 @@ export function PostList({ posts }: PostListProps) {
                         alt={title}
                         fill
                         className='object-cover'
+                        priority={index < 2}
                       />
                     </div>
                   </div>
@@ -100,7 +101,7 @@ export function PostList({ posts }: PostListProps) {
       {/* PC: 2열 그리드 */}
       <div className='hidden md:grid md:grid-cols-2 gap-6'>
         {filteredPosts.map(
-          ({ slug, title, date, excerpt, thumbnail, tags }) => (
+          ({ slug, title, date, excerpt, thumbnail, tags }, index) => (
             <Link key={slug} href={`/posts/${slug}`}>
               <article className='bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex h-full dark:bg-gray-800'>
                 {thumbnail && (
@@ -111,6 +112,7 @@ export function PostList({ posts }: PostListProps) {
                         alt={title}
                         fill
                         className='object-cover'
+                        priority={index < 4}
                       />
                     </div>
                   </div>
