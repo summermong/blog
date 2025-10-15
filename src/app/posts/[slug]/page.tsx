@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { TableOfContents } from '@/components/TableOfContents';
+import { Comments } from '@/components/Comments';
 
 export async function generateStaticParams() {
   const posts = getAllPostSlugs();
@@ -97,6 +98,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
               className='prose prose-lg dark:prose-invert'
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+
+            <Comments />
           </article>
 
           {/* 목차 (TOC) */}
