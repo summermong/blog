@@ -72,7 +72,7 @@ export function PostList({ posts }: PostListProps) {
                   <h3 className='text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100 '>
                     {title}
                   </h3>
-                  <p className='text-gray-600 dark:text-gray-400 line-clamp-2 mb-2'>
+                  <p className='text-gray-600 dark:text-gray-400 line-clamp-2 mb-2 whitespace-pre-line text-sm'>
                     {excerpt}
                   </p>
                   <div className='flex flex-col  justify-between'>
@@ -121,7 +121,7 @@ export function PostList({ posts }: PostListProps) {
                   <h3 className='text-xl font-bold  text-gray-900 dark:text-gray-100 hover:text-lime-600 dark:hover:text-lime-400 transition-colors line-clamp-2'>
                     {title}
                   </h3>
-                  <p className='text-gray-600 dark:text-gray-400line-clamp-2 flex-1'>
+                  <p className='text-gray-600 dark:text-gray-400 line-clamp-2 flex-1 whitespace-pre-line text-sm mb-2'>
                     {excerpt}
                   </p>
                   <div className='flex flex-col  justify-between mt-auto pt-4'>

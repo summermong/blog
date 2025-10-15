@@ -94,7 +94,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             </header>
 
             <div
-              className='prose prose-lg dark:prose-invert max-w-none'
+              className='prose prose-lg dark:prose-invert'
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
