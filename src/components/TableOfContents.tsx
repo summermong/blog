@@ -9,6 +9,7 @@ interface TableOfContentsProps {
 
 export function TableOfContents({ toc }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>('');
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const headingElements = toc
@@ -17,6 +18,9 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
 
     const observer = new IntersectionObserver(
       entries => {
+        // 클릭으로 스크롤 중일 때는 업데이트하지 않음
+        if (isScrolling) return;
+
         // 화면에 보이는 heading 중 가장 위에 있는 것 찾기
         const visibleHeadings = entries
           .filter(entry => entry.isIntersecting)
@@ -43,11 +47,12 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
     return () => {
       observer.disconnect();
     };
-  }, [toc]);
+  }, [toc, isScrolling]);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setActiveId(id);
+    setIsScrolling(true);
 
     const element = document.getElementById(id);
     if (element) {
@@ -59,6 +64,11 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
         top: offsetPosition,
         behavior: 'smooth',
       });
+
+      // 스크롤 완료 후 IntersectionObserver 다시 활성화
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
     }
   };
 
