@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div className=' bg-gray-50 dark:bg-gray-900'>
-      <div className='max-w-4xl mx-auto py-12 px-6'>
+      <div className='max-w-6xl mx-auto py-12 px-6'>
         <div className='text-center mb-16'>
           <h1 className='text-3xl font-bold text-lime-600 dark:text-gray-100 mb-4'>
             SUMMERMONG. 🍀
