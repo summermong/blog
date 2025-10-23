@@ -16,7 +16,7 @@ export function Header() {
         <div className='flex items-center justify-between'>
           <Link href='/' className='flex items-center space-x-2 group'>
             <Image
-              src='/images/logo.jpg'
+              src='/images/logo.webp'
               alt='내 블로그'
               className='rounded-4xl'
               width={40}

@@ -62,6 +62,7 @@ export function PostList({ posts }: PostListProps) {
                         src={thumbnail}
                         alt={title}
                         fill
+                        sizes='240px'
                         className='object-cover'
                         priority={index < 2}
                       />
@@ -111,6 +112,7 @@ export function PostList({ posts }: PostListProps) {
                         src={thumbnail}
                         alt={title}
                         fill
+                        sizes='180px'
                         className='object-cover'
                         priority={index < 4}
                       />
