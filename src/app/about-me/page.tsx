@@ -15,7 +15,7 @@ export default function page() {
     <div className=' bg-gray-50 dark:bg-gray-900'>
       <div className='max-w-3xl mx-auto py-16 px-6'>
         <Image
-          src='/images/logo.jpg'
+          src='/images/logo.webp'
           alt='프로필'
           width={200}
           height={200}
